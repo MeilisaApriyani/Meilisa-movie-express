@@ -51,7 +51,7 @@ export const updateMovie = async (req,res) => {
             })
         }
         console.log(request)
-        const response = await movieModel.findByIdAndUpdate(id, {
+        const response = await movieModels.findByIdAndUpdate(id, {
             judul : request.judul,
             tahunRilis : request.tahunRilis,
             sutradara : request.sutradara,
@@ -86,7 +86,7 @@ export const deleteMovie = async (req,res)=>{
             })
         }
 
-        const response = await movieModel.findByIdAndDelete(id)
+        const response = await movieModels.findByIdAndDelete(id)
         if(response) {
             res.status(500).json({
                 message : "Data Film Berhasil Dihapus",
